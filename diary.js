@@ -158,7 +158,11 @@
    */
   const renderDiary = ($sidebar, $left, $right, entries) => {
     $sidebar.innerHTML = "";
-    const requested = parseInt(window.location.hash.slice(1) || "0", 10);
+    let requested = parseInt(window.location.hash.slice(1) || "0", 10);
+    if (requested > entries.length - 1) {
+      requested = 0;
+    }
+
     for (const [index, entry] of entries.entries()) {
       const $entry = document.createElement("div");
       $entry.classList.add("entry");

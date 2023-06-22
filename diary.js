@@ -113,7 +113,8 @@
      */
     static isBlockHeader(line) {
       return (
-        line !== undefined && ["Stats:", "Skills:", "Mutations:"].includes(line)
+        line !== undefined &&
+        ["Stats:", "Skills:", "Mutations:", "Kills:"].includes(line)
       );
     }
 

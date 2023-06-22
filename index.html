@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CDDA Diary Viewer</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/marked/5.1.0/marked.min.js"
+      integrity="sha512-j5KAPeir0rGl+OSddiUeUtUlG+GK7acI/kNQqrpjSSB1IlDUbj3VnQOyoW3GWpPj7i8CSfb0T+Q4IRHxAPRxCA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.3/purify.min.js"
+      integrity="sha512-TBmnYz6kBCpcGbD55K7f4LZ+ykn3owqujFnUiTSHEto6hMA7aV4W7VDPvlqDjQImvZMKxoR0dNY5inyhxfZbmA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- a text input taking a URL to the uploaded diary file -->
+    <form id="diary-url-form">
+      <label for="diary-url">Diary URL:</label>
+      <input
+        type="text"
+        id="diary-url"
+        name="diary-url"
+        placeholder="https://example.com/diary.txt"
+      />
+      <input type="submit" value="Load" id="diary-load" />
+    </form>
+    <div id="content">
+      <div id="sidebar"></div>
+      <div id="left"></div>
+      <div id="right"></div>
+    </div>
+    <script src="diary.js"></script>
+  </body>
+</html>

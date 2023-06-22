@@ -1,0 +1,60 @@
+body {
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  background-color: #fff;
+  margin: 2%;
+  padding: 0;
+}
+
+input#diary-url {
+  width: 80%;
+}
+
+/*
+ * Set up the thin #sidebar on the left, and #left & #right side by side, using flex
+ * #sidebar and #left should expand to allow showing the contents without any line breaks
+ * #right should take up the remaining space
+*/
+#content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: stretch;
+}
+
+#sidebar {
+  background-color: #eee;
+  padding: 1%;
+  margin: 1%;
+}
+
+#left {
+  background-color: #eee;
+  padding: 1%;
+  margin: 1%;
+}
+
+#right {
+  background-color: #eee;
+  padding: 1%;
+  margin: 1%;
+}
+
+li.checkbox {
+  list-style-type: none;
+}
+
+ul.checkbox {
+  padding: 0;
+}
+
+#sidebar .entry:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+#sidebar .entry.active {
+  font-weight: bold;
+}

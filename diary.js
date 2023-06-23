@@ -134,6 +134,7 @@
       let text = [];
       while (!r.isEof() && !this.isNewTitle(r.peekLine())) {
         text = text.concat(r.read_block());
+        text.push("");
       }
 
       return new DiaryEntry(title, blocks, text);
@@ -267,7 +268,10 @@
   };
 
   const main = () => {
-    const $form = document.getElementById("diary-url-form");
+    marked.use({
+      break: true,
+    });
+
     const $diaryUrl = document.getElementById("diary-url");
     const $sidebar = document.getElementById("sidebar");
     const $left = document.getElementById("left");

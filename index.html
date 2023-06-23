@@ -24,11 +24,27 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css"
+      integrity="sha512-TktJbycEG5Van9KvrSHFUcYOKBroD7QCYkEe73HAutODCw9QTFcvF6fuxioYM1h6THNudK1GjVidazj6EslK4A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- a text input taking a URL to the uploaded diary file -->
+    <!-- Link to GitHub -->
+    <a
+      class="github-fork-ribbon"
+      href="https://github.com/abesto/cdda-diary-viewer"
+      data-ribbon="Questions? GitHub!"
+      title="Questions? GitHub!"
+      >Questions? GitHub!</a
+    >
+
+    <!-- A text input taking a URL to the uploaded diary file -->
     <form id="diary-url-form" method="get">
       <label for="diary-url">Diary URL:</label>
       <input
@@ -39,6 +55,7 @@
       />
       <input type="submit" value="Load" id="diary-load" />
     </form>
+    <!-- Display teh content -->
     <div id="content">
       <div id="sidebar"></div>
       <div id="left"></div>

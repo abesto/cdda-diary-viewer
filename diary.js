@@ -278,6 +278,31 @@
       $diaryUrl.value = params.get("diary-url");
       fetchAndRender($diaryUrl.value, $sidebar, $left, $right);
     }
+
+    // Navigate entries using up/down, j/k
+    // Hacky AF, but there's only so much you can do without introducing a bunch of complexity
+    document.addEventListener("keydown", (event) => {
+      console.log(event.key);
+      let offset = 0;
+      if (event.key === "ArrowDown" || event.key === "j") {
+        offset = 1;
+      } else if (event.key === "ArrowUp" || event.key === "k") {
+        offset = -1;
+      }
+      if (offset === 0) {
+        return;
+      }
+
+      const active = document.getElementsByClassName("entry active")[0];
+      if (active === undefined) {
+        return;
+      }
+
+      const entries = document.getElementsByClassName("entry");
+      const index = Array.from(entries).indexOf(active);
+      const newIndex = (index + offset + entries.length) % entries.length;
+      entries[newIndex].click();
+    });
   };
 
   document.addEventListener("DOMContentLoaded", main);

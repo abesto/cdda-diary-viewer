@@ -282,7 +282,6 @@
     // Navigate entries using up/down, j/k
     // Hacky AF, but there's only so much you can do without introducing a bunch of complexity
     document.addEventListener("keydown", (event) => {
-      console.log(event.key);
       let offset = 0;
       if (event.key === "ArrowDown" || event.key === "j") {
         offset = 1;

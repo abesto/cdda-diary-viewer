@@ -114,7 +114,9 @@
     static isBlockHeader(line) {
       return (
         line !== undefined &&
-        ["Stats:", "Skills:", "Mutations:", "Kills:"].includes(line)
+        line[0].toUpperCase() === line[0] &&
+        line.trim().endsWith(":") &&
+        !line.trim().includes(" ")
       );
     }
 

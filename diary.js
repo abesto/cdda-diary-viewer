@@ -112,6 +112,13 @@
      * @returns {boolean}
      */
     static isBlockHeader(line) {
+      if (
+        line === "Active missions:" ||
+        line === "New missions:" ||
+        line === "Completed missions:"
+      ) {
+        return true;
+      }
       return (
         line !== undefined &&
         line[0].toUpperCase() === line[0] &&
